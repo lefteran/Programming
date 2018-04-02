@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+
+<script language="javascript">
+
+function checksignup(form)
+{
+		var name=form.name.value, pass1=form.pass1.value, pass2=form.pass2.value, cardname=form.cardname.value, cardnumber=form.cardnumber.value, city=form.city.value;
+		var address=form.address.value, email=form.email.value;
+        var box=form.terms;
+		
+	if(name=="" || pass1=="" || pass2=="" || cardname=="" || cardnumber=="" || city=="" || address=="" || email==""){
+		alert("Please fill in all the necessary information");
+		return false;
+	}
+	if(pass1!=pass2){
+			alert("Passwords are not the same");
+
+			return false;
+	}
+	if (!isValidEmail(email)){
+            form.email.focus();
+			form.email.select();
+			alert("You gave an invalid email");
+			return false;
+		}
+		
+		if(box.checked==false){
+			alert("Check the box if you agree with the terms");
+			return false;
+	    }
+    }
+	
+	function isValidEmail(strEmail){
+	
+		validRegExp = /^[^@]+@[^@]+.[a-z]{2,}$/i;		  
+  		if (strEmail.search(validRegExp) == -1) 
+		{			  
+		  return false;
+		}
+		return true;  
+	}
+
+</script>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<link rel="STYLESHEET" href="menu.css" type="text/css">
+</head>
+
+<body background="images/deigma180.jpg" title="signup">
+<table width="100%" height="100%" border="0" align="center">
+
+	<tr>
+
+	    <td width="24%" height="17%" valign="top" align="center">
+	    	<table width="100%" height="100%">
+	    		<tr>
+	    			<td colspan="2" align="center">
+	    				<img src="images/SynkBackup.png">
+	    			</td>
+	    			<td>
+	    				&nbsp;
+	    			</td>
+					<td>
+						&nbsp;
+	    			</td>
+	    		</tr>
+	    	</table>
+	    </td>
+
+	    <td width="49%" align="center" valign="top"><font size="6"><b><br> Storage cloud</b></font></td>
+
+    	<td width="27%" align="center" valign="top"><p> <font size="2"> &nbsp; &nbsp; &nbsp; &nbsp;<a href="#"><img src="images/uk-flag.jpg" alt="select language" width="31" height="18" align="top"/></a> &nbsp; &nbsp; &nbsp;<a href="javascript:void(0)"onclick="window.open	('help.html','linkname','height=480, width=450')"><strong>link1</strong></a> &nbsp; &nbsp; &nbsp;<strong><a href="#">link2</a></strong></td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+    <td height="56" align="center" valign="top" nowrap="nowrap"> 
+    
+    <table align="center" border="0">
+   		<tr>
+    	<td align="center" valign="middle">  
+		<div id="tabsF">
+  			<ul>
+   			<li><a href="cloud.html" title="Link 1"><span>Home</span></a></li>
+    		<li><a href="#" title="Link 2"><span>Products</span></a></li>
+    		<li><a href="signup.html" title="Link 3"><span><font color="EE2C2C">Sign up</font></span></a></li>
+    		<li><a href="#" title="Link 4"><span>About</span></a></li>
+    		<li><a href="login.html" title="Link 5"><span>Log in</span></a></li>
+    		<li><a href="#" title="Link 6"><span>Search</span></a></li>
+  			</ul>
+		</div>
+    	</td>
+ 	 </tr>
+	</table>
+    </td>
+</tr>
+  <tr>
+
+    <td>&nbsp;</td>
+
+    <td align="center" ><font size="5"><b> Sign up</b></font></td>
+
+    <td>&nbsp;</td>
+
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td align="center"><form name="information"  action="#" method="post" onSubmit="return checksignup(document.information);">
+    	<table width="60%" border="0" align="center">
+      <tr>
+        <td width="45%">&nbsp;</td>
+        <td width="55%">&nbsp;</td>
+      </tr>
+      <tr>
+        <!-- <td colspan="2"><font size="2">Τα πεδία με <font color="#FF0000">*</font> είναι υποχρεωτικό να συμπληρωθούν</font></td>-->
+      </tr>
+      <tr>
+        <td><font size="2"><b> Name </b> </font></td>
+        <td align="center"><input type="text" name="name" maxlength="50" size="25"> </td>
+      </tr>
+      <tr>
+        <td><font size="2"><b> Password </b> </font></td>
+        <td align="center"><input type="password" name="pass1" maxlength="50" size="25"> </td>
+      </tr>
+      <tr>
+        <td><font size="1" color="EE2C2C"><b> &nbsp;</b> </font></td>
+        <td  align="center"><font size="1" color="515151"><b> Password at least 8 characters.</b> </font></td>
+      </tr>
+      <tr>
+        <td><font size="2"><b> Repeat password</b> </font></td>
+        <td align="center"><input type="password" name="pass2" maxlength="50" size="25"> </td>
+      </tr>
+      <tr>
+        <td><font size="2"><b> Email</b> </font></td>
+		<td align="center"><input type="text" name="email" maxlength="50" size="25"> </td>    
+	 </tr>
+      <tr>
+        <td><font size="2"><b> Capacity</b> </font></td>
+		<td align="center">
+			<input type="radio" checked="checked" name="capacity" value="10GB"> <font size="1"><b>10GB</b> </font> 
+			<input type="radio" name="capacity" value="100GB"> <font size="1"><b>100GB</b> </font>
+			<input type="radio" name="capacity" value="500GB"> <font size="1"><b>500GB</b> </font>
+		</td>    
+	 </tr>
+
+     <tr>
+        <td><font size="2"><b> &nbsp;</b> </font></td>
+	 </tr>
+
+      <tr>
+        <td align="center" colspan="2"><font size="3"><b> Payment details</b> </font></td>
+	 </tr>
+      <tr>
+        <td><font size="2"><b> &nbsp;</b> </font></td>
+        <td align="center" ><img src="images/cards.png"></td>
+	 </tr>
+
+      <tr>
+        <td><font size="2"><b> Name of card </b> </font></td>
+		<td align="center"><input type="text" name="cardname" maxlength="50" size="25"> </td>
+      </tr>
+      <tr>
+        <td><font size="2"><b> Card number </b> </font></td>
+        <td align="center"><input type="text" name="cardnumber" maxlength="50" size="25"> </td>
+      </tr>
+      <tr>
+        <td><font size="2"><b> City </b> </font></td>
+        <td align="center"><input type="text" name="city" maxlength="50" size="25"> </td>
+      </tr>
+      <tr>
+        <td><font size="2"><b> Address </b> </font></td>
+        <td align="center"><input type="text" name="address" maxlength="50" size="25"> </td>
+      </tr>
+
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+    <td align="center" colspan="2"><font size="2"><b>Terms of use</b></font>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><textarea rows="5" cols="35" readonly>You must be a registered user to access the Service. You are responsible for keeping your password secure. You will be solely responsible and liable for any activity that occurs under your user name. If you lose your password or the encryption key for your account, you may not be able to access your data.</textarea></td>
+  </tr>
+  <tr>
+     <td colspan="2" align="center"<input name="terms" type="checkbox"> <font size="2">I agree with the terms<font></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><br><input type="submit" align="middle" name="register" value="Sign up"></td>
+  </tr>
+    </table>
+    </form></td>
+    <td>&nbsp;</td>
+ </tr>
+
+
+<tr></tr>
+</table>
+</body>
+</html>
